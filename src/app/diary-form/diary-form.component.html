@@ -1,0 +1,42 @@
+<mat-card >
+  <form [formGroup]="diaryForm" (ngSubmit)="onSubmit()">
+    <mat-card-title>New entry</mat-card-title>
+    <mat-card-content class = "container">
+
+      <div class = "row">
+        <mat-form-field style="width: 400px;">
+          <input matInput placeholder="Title" formControlName= "title"[(ngModel)]="newEntry.title"  >
+        </mat-form-field>
+      </div>
+
+
+      <div class = "row" >
+        <mat-form-field style="width: 400px;">
+          <input matInput placeholder="Date" type='date'formControlName= "date" [(ngModel)]="newEntry.entryDate" >
+        </mat-form-field>
+      </div>
+
+      <div class = "row">
+        <mat-form-field style="width: 600px;">
+          <textarea matInput  rows="10" cols="100"
+             placeholder="Write entry here" formControlName= "content"[(ngModel)]="newEntry.content" >
+          </textarea>
+
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+      <!--!<button mat-icon-button matTooltip="Add entry"(click)="onSubmit()"><mat-icon>check</mat-icon></button>-->
+      <button type="submit" class="btn btn-primary">submit</button>
+
+  </form>
+</mat-card>
+
+
+<mat-card *ngFor="let entry of entries,let i = index">
+  <mat-card-subtitle>{{entry.entryDate| date}}</mat-card-subtitle>
+  <mat-card-title>{{entry.title}}</mat-card-title>
+  <mat-card-content>{{entry.content}}</mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button mdTooltip="Remove entry" (click)="deleteEntry(i)"><mat-icon>delete</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
