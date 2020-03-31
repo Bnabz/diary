@@ -16,13 +16,15 @@ import { FormsModule } from '@angular/forms';
 import { DiaryFormComponent } from './diary-form/diary-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TitleHighlightDirective } from './title-highlight.directive';
+import { DateFormatPipe } from './date-format.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DiaryFormComponent,
-    TitleHighlightDirective
+    TitleHighlightDirective,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
