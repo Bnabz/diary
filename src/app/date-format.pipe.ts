@@ -3,11 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'dateFormat'
 })
-export class DateFormatPipe extends 
+export class DateFormatPipe extends
                 DatePipe implements PipeTransform {
 
   transform(value: any): any {
-     return super.transform(value, "EEEE d MMMM y h:mm a");
+     return super.transform(value, "EEEE , d MMMM y");
   }
 
 }
