@@ -34,7 +34,7 @@
 
 <mat-card *ngFor="let entry of entries,let i = index">
   <mat-card-subtitle>{{entry.entryDate| date}}</mat-card-subtitle>
-  <mat-card-title>{{entry.title}}</mat-card-title>
+  <mat-card-title appTitleHighlight>{{entry.title}}</mat-card-title>
   <mat-card-content>{{entry.content}}</mat-card-content>
   <mat-card-actions>
     <button mat-icon-button mdTooltip="Remove entry" (click)="deleteEntry(i)"><mat-icon>delete</mat-icon></button>
